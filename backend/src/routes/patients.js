@@ -10,3 +10,5 @@ router.route("/")
 router.route("/:id")
     .put(upload.single("profilePhoto"), patientsController.updatePatients)
     .delete(patientsController.patientsDelete)
+
+export default router;

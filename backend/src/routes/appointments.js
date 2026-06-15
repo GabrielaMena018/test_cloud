@@ -1,0 +1,9 @@
+/*
+    Campos:
+        patient_id,
+        specialty_id,
+        appointmentDate,
+        reason,
+        status,
+        observations
+*/

@@ -34,7 +34,7 @@ const patientSchema = new Schema({
     public_id: {type: String},
     isVerified: {type: Boolean},
     loginAttempts: {type: Number},
-    timeOut: {type: Number}
+    timeOut: {type: Boolean}
 },{
     timestamps: true,
     strict: false
