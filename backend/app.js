@@ -7,7 +7,7 @@ import login from "./src/routes/loginPatients.js";
 import appointmentsRoutes from "./src/routes/appointments.js";
 import medicalRecordsRoutes from "./src/routes/medicalRecords.js";
 import specialtiesRoutes from "./src/routes/specialties.js";
-
+import recoveryRoutes from "./src/routes/recoveryPassword.js";
 const app = express();
 
 app.use(cors({
@@ -24,5 +24,6 @@ app.use("/api/login", login);
 app.use("/api/appointments", appointmentsRoutes);
 app.use("/api/medical-records", medicalRecordsRoutes);
 app.use("/api/specialties", specialtiesRoutes);
+app.use("/api/recovery", recoveryRoutes);
 
 export default app;
