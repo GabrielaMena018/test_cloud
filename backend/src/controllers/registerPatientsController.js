@@ -43,7 +43,7 @@ registerPatientController.register = async (req, res) => {
 
       
 
-        const newPatient = new patientsModel({
+       /* const newPatient = new patientsModel({
                 name,
                 lastName,
                 email,
@@ -57,13 +57,25 @@ registerPatientController.register = async (req, res) => {
                 isVerified,
                 loginAttempts,
                 timeOut
-        });
+        });*/
 
         //Guardamos todo en el token
         const token = jsonwebtoken.sign(
             {
                 randomCode,
-                newPatient
+                name,
+                lastName,
+                email,
+                password: passwordHashed,
+                birthDate,
+                phone,
+                address,
+                phoneEmergencyContacts,
+                profilePhoto: req.file.path,
+                public_id: req.file.filename,
+                isVerified,
+                loginAttempts,
+                timeOut
             },
             //Secret key
             config.JWT.secret,
@@ -101,7 +113,17 @@ registerPatientController.register = async (req, res) => {
             return res.status(200).json({message: "email sent"})
         });
 
-      
+        //Verificamos el codigo que acabamos de enviar
+
+
+
+
+        //Extraer todos lso datos del token
+        const decoded = jsonwebtoken.verify(token, config.JWT.secret)
+        const 
+
+
+
          
     } catch (error) {
          console.log("error" + error)
